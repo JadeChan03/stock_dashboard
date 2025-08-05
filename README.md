@@ -168,8 +168,7 @@ stock_exporter:
    - Upload the provided JSON file (`grafana/stock_dashboard.json`) from this repository, or paste its contents into the import box.
    - When prompted, select your Prometheus data source.
    - Click **Import** to finish.
-4. **Troubleshooting Panel Displays**
-   If the metrics data don't show up, please edit a panel and check the Query by following these steps:
+4. **Troubleshooting Panel Displays**: If the metrics data don't show up, please edit a panel and check the Query by following these steps:
    - Open your dashboard in Grafana.
    - Edit a panel and check the query.
    - Trying clicking on the metric name field as if you were re-typing it (e.g. `stock_current_price`) in the query box
