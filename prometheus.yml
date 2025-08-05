@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'stock_exporter'
+    static_configs:
+      - targets: ['stock_exporter:8000']

@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana-data:/var/lib/grafana # for data persistence
+      - ./grafana/dashboards:/var/lib/grafana/dashboards # mounts custom dashboard files into container
+      - ./grafana/provisioning:/etc/grafana/provisioning # mounts YAML files that tell Grafana how to load dashboards, data sources, etc.
+
+  stock_exporter:
+    build: ./stock_exporter
+    ports:
+      - "8000:8000"
+    environment:
+      - FINNHUB_API_KEY=your_finnhub_api_key # ! replace with your actual API key
+      - STOCK_SYMBOL=AAPL
+
+volumes:
+  grafana-data: # this volume is used to persist Grafana data across container restarts
