@@ -1,6 +1,6 @@
 # Stock Dashboard with Grafana, Prometheus & Finnhub
 
-This project demonstrates how to build a real-time stock dashboard using **Grafana**, **Prometheus**, and the **Finnhub API**. It fetches live stock prices and visualizes them in a modern dashboard.
+This project demonstrates how to build a real-time stock dashboard using **Grafana**, **Prometheus**, and the **Finnhub API**. It fetches live APPL stock price and visualizes them in a modern dashboard.
 
 ![Dashboard Screenshot](dashboard.png)
 
@@ -36,7 +36,7 @@ This project demonstrates how to build a real-time stock dashboard using **Grafa
 
 ## Technical Approach
 
-This project is built with a modular and reproducible architecture using Docker Compose. Each component is isolated in its own container, allowing for easy deployment and scalability.
+This project is a full-stack, containerized monitoring application that fetches real-time stock prices and visualizes them in Grafana dashboards. It leverages Python, Prometheus, and Grafana, all orchestrated with Docker Compose for easy deployment and reproducibility.
 
 ### Data Flow
 
