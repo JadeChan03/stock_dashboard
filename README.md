@@ -139,6 +139,10 @@ stock_exporter:
    - **Grafana:** [http://localhost:3000](http://localhost:3000)
    - **Prometheus:** [http://localhost:9090](http://localhost:9090)
 
+5. **Add Grafana Dashboards**
+
+   - Follow the steps in the next section to (1) add Prometheus as a data source, (2) import the prebuilt dashboard, and (3) troubleshoot data display by manually re-running queries on the dashboard panels.
+
 ---
 
 ## Adding Grafana Dashboards
