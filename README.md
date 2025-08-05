@@ -148,15 +148,29 @@ stock_exporter:
    - NOT `http://localhost:9090`
    - This works because Docker Compose creates a network where services can reach each other by their service names.
 3. **Import the Prebuilt Dashboard:**
-   - Go to the left sidebar, click the **"+"** icon, then select **Import**.
+   - Click **Dashboards** then **Create New Dashboard**
+   - Select **Import**.
    - Upload the provided JSON file (`grafana/stock_dashboard.json`) from this repository, or paste its contents into the import box.
    - When prompted, select your Prometheus data source.
    - Click **Import** to finish.
 4. **Troubleshooting Panel Displays**: If the metrics data don't show up, please edit a panel and check the Query by following these steps:
    - Open your dashboard in Grafana.
+   
+   ![Dashboard Error Screenshot](dashboard_no_data.png)
+
    - Edit a panel and check the query.
-   - Trying clicking on the metric name field as if you were re-typing it (e.g. `stock_current_price`) in the query box
+
+   ![Error 1](error_1.png)
+
+   - Click on the metric name field as if you were re-typing it (e.g. `stock_current_price`) in the query box
+
+   ![Error 2](error_2.png)
+
    - Click **Run query**, then **Apply**.
+
+   ![Error 3](error_3.png) 
+   ![Error 4](error_4.png)
+
 
 **Note:** Alternatively, Grafana metrics may take up to a minute to appear after startup. This delay is due to how the Python exporter script initializes and begins exposing metrics.
 
@@ -197,7 +211,7 @@ stock_exporter:
 > **If you see an error like:**  
 > `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`  
 > **Solution:**  
-> Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --
+> Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
 
 ---
 
