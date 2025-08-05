@@ -1,6 +1,6 @@
 # Stock Dashboard with Grafana, Prometheus & Finnhub
 
-This project demonstrates how to build a real-time stock dashboard using **Grafana**, **Prometheus**, and the **Finnhub API**. It fetches live APPL stock price and visualizes them in a modern dashboard.
+This project is a real-time stock dashboard using **Grafana**, **Prometheus**, and the **Finnhub API**. It fetches live APPL stock price and visualizes them in a modern dashboard.
 
 ![Dashboard Screenshot](dashboard.png)
 
