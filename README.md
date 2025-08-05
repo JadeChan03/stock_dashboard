@@ -1,4 +1,4 @@
-# 📊 Stock Dashboard with Grafana, Prometheus & Finnhub
+# Stock Dashboard with Grafana, Prometheus & Finnhub
 
 This project demonstrates how to build a real-time stock dashboard using **Grafana**, **Prometheus**, and the **Finnhub API**. It fetches live stock prices and visualizes them in a modern dashboard.
 
@@ -38,13 +38,13 @@ This project demonstrates how to build a real-time stock dashboard using **Grafa
 
 This project is built with a modular and reproducible architecture using Docker Compose. Each component is isolated in its own container, allowing for easy deployment and scalability.
 
-### 🔄 Data Flow
+### Data Flow
 
 1. **Stock Exporter**: A Python service fetches real-time stock prices from the Finnhub API and exposes them as Prometheus-compatible metrics.
 2. **Prometheus**: Periodically scrapes metrics from the stock exporter and stores time-series data.
 3. **Grafana**: Connects to Prometheus as a data source and visualizes the metrics in a customizable dashboard.
 
-### ⚙️ Grafana Provisioning
+### Grafana Provisioning
 
 To streamline dashboard setup and avoid manual configuration, Grafana uses **provisioning**:
 
@@ -52,14 +52,14 @@ To streamline dashboard setup and avoid manual configuration, Grafana uses **pro
 - The dashboard JSON (`grafana/dashboards/stock_dashboard.json`) is automatically loaded on startup.
 - This ensures consistent visualization across environments and simplifies version control.
 
-### 💾 Data Persistence
+### Data Persistence
 
 Grafana's internal data (e.g., user settings, installed plugins) is stored in a **named Docker volume** (`grafana-data`). This allows:
 
 - Dashboards and configurations to persist across container restarts.
 - Easy backup and migration of Grafana state.
 
-### 🐳 Docker Integration
+### Docker Integration
 
 All services are orchestrated using Docker Compose:
 
