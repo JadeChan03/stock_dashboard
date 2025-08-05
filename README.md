@@ -12,11 +12,14 @@ This project is a real-time stock dashboard using **Grafana**, **Prometheus**, a
 - [Technical Approach](#technical-approach)
 - [Getting A FinnHub API Key](#getting-a-finnhub-api-key)
 - [Setting Up Environment Variables](#setting-up-environment-variables)
-- [Setup Instructions](#setup-instructions)
+- [Setup Instructions](#setup-instructions) *
+- [Adding Grafana Dashboards](#adding-grafana-dashboards) *
 - [File Structure](#file-structure)
 - [Security Note](#security-note)
 - [Trouble Shooting](#troubleshooting)
 - [Future Enhancements](#future-enhancements)
+
+\*Go directly to these sections to get started once you have your Docker, FinnHub and environment variables set up
 
 ---
 
