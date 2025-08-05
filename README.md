@@ -168,15 +168,13 @@ stock_exporter:
 
    ![Error 2](assets/error_2.png)
 
-   - Click **Run query**, then **Apply**.
+   - Click **Run query**, then **Apply** on the ***top right*** of the dashboard.
 
    ![Error 3](assets/error_3.png)
    ![Error 4](assets/error_4.png)
 
 5. **Further trouble shooting**
    - If the panels are still not fetching data correctly, please refer to [Trouble Shooting](#troubleshooting) to ensure you have updated your API key in the Docker-Compose file.
-
-**Note:** Alternatively, Grafana metrics may take up to a minute to appear after startup. This delay is due to how the Python exporter script initializes and begins exposing metrics.
 
 ---
 
