@@ -82,25 +82,9 @@ All services are orchestrated using Docker Compose:
 
 The Python exporter requires your Finnhub API key and optionally a stock symbol.
 
-### On Linux/macOS
+### Using Docker Compose (recommended + supported)
 
-Before starting the stack, run these commands in your terminal (replace with your actual API key and desired stock symbol):
-
-```bash
-export FINNHUB_API_KEY=your_finnhub_api_key
-export STOCK_SYMBOL=AAPL  # Optional, defaults to AAPL
-```
-
-### On Windows (Command Prompt)
-
-```cmd
-set FINNHUB_API_KEY=your_finnhub_api_key
-set STOCK_SYMBOL=AAPL
-```
-
-### Using Docker Compose
-
-You can also set environment variables directly in the `docker-compose.yml` file under the `stock_exporter` service:
+Set environment variables directly in the `docker-compose.yml` file under the `stock_exporter` service:
 
 ```yaml
 stock_exporter:
