@@ -10,13 +10,13 @@ This project is a real-time stock dashboard using **Grafana**, **Prometheus**, a
 
 - [Architecture Overview](#architecture-overview)
 - [Technical Approach](#technical-approach)
-- [Getting A FinnHub API Key](#getting-a-finnhub-api-key)
-- [Setting Up Environment Variables](#setting-up-environment-variables)
-- [Setup Instructions I](#setup-instructions-i) *
-- [Setup Instruction II: Adding Grafana Dashboards](#setup-instructions-ii-adding-grafana-dashboards) *
+- [Pre-setup I: Getting A FinnHub API Key](#pre-setup-i-getting-a-finnhub-api-key)
+- [Pre-setup II: Setting Up Environment Variables](#pre-setup-ii-setting-up-environment-variables)
+- [Setup Instructions I](#setup-instructions-i-start-the-application) \*
+- [Setup Instruction II: Adding Grafana Dashboards](#setup-instructions-ii-adding-grafana-dashboards) \*
+- [Trouble Shooting](#troubleshooting)
 - [File Structure](#file-structure)
 - [Security Note](#security-note)
-- [Trouble Shooting](#troubleshooting)
 - [Future Enhancements](#future-enhancements)
 
 \*Go directly to these sections to get started once you have your Docker, FinnHub and environment variables set up
@@ -72,7 +72,7 @@ All services are orchestrated using Docker Compose:
 
 ---
 
-## Getting a Finnhub API Key
+## Pre-setup I: Getting a Finnhub API Key
 
 1. Go to [Finnhub.io](https://finnhub.io).
 2. Click **Get Free API Key** and sign up for an account.
@@ -81,7 +81,7 @@ All services are orchestrated using Docker Compose:
 
 ---
 
-## Setting Up Environment Variables
+## Pre-setup II: Setting Up Environment Variables
 
 The Python exporter requires your Finnhub API key and optionally a stock symbol.
 
@@ -103,7 +103,7 @@ stock_exporter:
 
 ---
 
-## Setup Instructions I
+## Setup Instructions I: Start the Application
 
 1. **Clone the Repository**
 
@@ -122,20 +122,13 @@ stock_exporter:
    docker-compose up --build -d
    ```
 
-   **_note_**
-
-   - `-d` in the above command lets your stack run in the background so you can keep using your terminal
-   - To stop and remove all containers and networks created by Compose, use this clean up command. Add `-v` at the end to delete volumes as well, otherwise, the Grafana volume will persist.
-
-   ```bash
-   docker-compose down
-   ```
-
    This will start:
 
    - The Python stock exporter on port 8000
    - Prometheus on port 9090
    - Grafana on port 3000
+
+   > - To stop and remove all containers and networks created by Compose, use this clean up command. Add `-v` at the end to delete volumes as well, otherwise, the Grafana volume will persist. `docker-compose down`
 
 4. **Access the Dashboards**
 
@@ -152,7 +145,8 @@ stock_exporter:
 
 1. **Log in to Grafana on [http://localhost:3000](http://localhost:3000) (default user: `admin`, password: `admin`)**
 2. **Add Prometheus as a data source**
-   - Click **Connections** on the left of the dashboard
+   - Click **Add Your First Data Source** from the main dashboard
+     - Alternatively: click **Connections** on the left of the dashboard then **Add New Connections**
    - Add Prometheus as a data source by inputting (`http://prometheus:9090`)
 3. **Import the Prebuilt Dashboard:**
    - Click **Dashboards** then **Create New Dashboard**
@@ -161,11 +155,12 @@ stock_exporter:
    - When prompted, select your Prometheus data source.
    - Click **Import** to finish.
 4. **Re-establish Panel Connections:**
+
    - Open your dashboard in Grafana
-   
+
    ![Dashboard Error Screenshot](assets/dashboard_no_data.png)
 
-   - Edit a panel by ***hovering*** over the top right corner
+   - Edit a panel by **_hovering_** over the top right corner
 
    ![Error 1](assets/error_1.png)
 
@@ -175,11 +170,25 @@ stock_exporter:
 
    - Click **Run query**, then **Apply**.
 
-   ![Error 3](assets/error_3.png) 
+   ![Error 3](assets/error_3.png)
    ![Error 4](assets/error_4.png)
 
+5. **Further trouble shooting**
+   - If the panels are still not fetching data correctly, please refer to [Trouble Shooting](#troubleshooting) to ensure you have updated your API key in the Docker-Compose file.
 
 **Note:** Alternatively, Grafana metrics may take up to a minute to appear after startup. This delay is due to how the Python exporter script initializes and begins exposing metrics.
+
+---
+
+## Troubleshooting
+
+- If you see errors about missing API keys, ensure you have set `FINNHUB_API_KEY` in your environment or in `docker-compose.yml`.
+- Check logs with `docker-compose logs stock_exporter` for more details.
+
+> **If you see an error like:**  
+> `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`  
+> **Solution:**  
+> Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
 
 ---
 
@@ -207,18 +216,6 @@ stock_exporter:
 
 - **Never share your Finnhub API key publicly.**
 - Use environment variables or Docker secrets for sensitive information.
-
----
-
-## Troubleshooting
-
-- If you see errors about missing API keys, ensure you have set `FINNHUB_API_KEY` in your environment or in `docker-compose.yml`.
-- Check logs with `docker-compose logs stock_exporter` for more details.
-
-> **If you see an error like:**  
-> `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`  
-> **Solution:**  
-> Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
 
 ---
 
