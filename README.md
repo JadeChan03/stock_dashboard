@@ -147,7 +147,7 @@ stock_exporter:
 
 1. **Log in to Grafana on [http://localhost:3000](http://localhost:3000) (default user: `admin`, password: `admin`)**
 2. **Add Prometheus as a data source**
-   - Click **Add Your First Data Source** from the main dashboard click **Building a Dashboard** on the pop-up message
+   - Click **Add Your First Data Source** from the main dashboard
      - Alternatively: click **Connections** on the left of the dashboard then **Add New Connections**
    - Add Prometheus as a data source by inputting (`http://prometheus:9090`)
    - Click **Save & Test**
