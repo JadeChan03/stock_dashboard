@@ -152,7 +152,7 @@ stock_exporter:
    - Add Prometheus as a data source by inputting (`http://prometheus:9090`)
    - Click **Save & Test**
 3. **Import the Prebuilt Dashboard:**
-   - After you **Save & Test** your data source, click 
+   - After you **Save & Test** your data source, click **building a dashboard** from the pop-up message
       - Alternatively: click **Dashboards** then **Create New Dashboard**
 
    ![Save & Test](assets/save_and_test.png)
