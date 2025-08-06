@@ -116,6 +116,8 @@ stock_exporter:
 
    Follow the instructions above to set your `FINNHUB_API_KEY` and (optionally) `STOCK_SYMBOL`.
 
+   ![Api Key](assets/api_key.png)
+
 3. **Start the Stack**
 
    ```bash
@@ -145,11 +147,16 @@ stock_exporter:
 
 1. **Log in to Grafana on [http://localhost:3000](http://localhost:3000) (default user: `admin`, password: `admin`)**
 2. **Add Prometheus as a data source**
-   - Click **Add Your First Data Source** from the main dashboard
+   - Click **Add Your First Data Source** from the main dashboard click **Building a Dashboard** on the pop-up message
      - Alternatively: click **Connections** on the left of the dashboard then **Add New Connections**
    - Add Prometheus as a data source by inputting (`http://prometheus:9090`)
+   - Click **Save & Test**
 3. **Import the Prebuilt Dashboard:**
-   - Click **Dashboards** then **Create New Dashboard**
+   - After you **Save & Test** your data source, click 
+      - Alternatively: click **Dashboards** then **Create New Dashboard**
+
+   ![Save & Test](assets/save_and_test.png)
+
    - Select **Import**.
    - Upload the provided JSON file (`grafana/stock_dashboard.json`) from this repository, or paste its contents into the import box.
    - When prompted, select your Prometheus data source.
@@ -166,12 +173,11 @@ stock_exporter:
 
    - Click on the metric name field as if you were re-typing it (e.g. `stock_current_price`) in the query box
 
-   ![Error 2](assets/error_2.png)
+   ![No Data](assets/no_data.png)
 
    - Click **Run query**, then **Apply** on the ***top right*** of the dashboard.
 
-   ![Error 3](assets/error_3.png)
-   ![Error 4](assets/error_4.png)
+   ![Click Apply](assets/click_apply.png)
 
 5. **Further trouble shooting**
    - If the panels are still not fetching data correctly, please refer to [Trouble Shooting](#troubleshooting) to ensure you have updated your API key in the Docker-Compose file.
@@ -180,13 +186,17 @@ stock_exporter:
 
 ## Troubleshooting
 
-- If you see errors about missing API keys, ensure you have set `FINNHUB_API_KEY` in your environment or in `docker-compose.yml`.
-- Check logs with `docker-compose logs stock_exporter` for more details.
+- If you see errors about missing API keys
+   - **Solution:** Ensure you have set `FINNHUB_API_KEY` in your environment or in `docker-compose.yml`.
+   - Check logs with `docker-compose logs stock_exporter` for more details.
+   - Use the clean up command before rebuilding the container after you update your API key environment variable
 
-> **If you see an error like:**  
-> `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`  
-> **Solution:**  
-> Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
+```bash 
+docker-compose down
+```
+
+- If you see an error like:** `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`  
+   - **Solution:** Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
 
 ---
 
