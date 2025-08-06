@@ -23,10 +23,7 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -39,7 +36,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -100,10 +98,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -148,7 +143,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -206,10 +202,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -255,7 +248,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -340,10 +334,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -356,7 +347,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -419,7 +411,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+        "uid": "f7356124-8e2d-4607-bdc8-ae37ddffb394"
       },
       "fieldConfig": {
         "defaults": {
@@ -433,7 +425,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -494,10 +487,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -510,7 +500,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -571,10 +562,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -587,7 +575,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -647,10 +636,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
-      },
+      "datasource": {},
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -672,7 +658,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               },
               {
                 "color": "red",
@@ -830,6 +817,6 @@
   "timezone": "",
   "title": "APPL Stock Metrics",
   "uid": "d32cd53e-85a1-4fed-a0bc-ab7818225a3b",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }
