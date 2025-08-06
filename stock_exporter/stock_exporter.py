@@ -23,7 +23,7 @@ def fetch_stock_data():
         high_price.set(data.get('h', 0))
         low_price.set(data.get('l', 0))
         previous_close.set(data.get('pc', 0))
-        dividend_yield.set(data.get('d', 0))  # Assuming 'd' is the dividend yield key
+        dividend_yield.set(data.get('d', 0)) 
     except Exception as e:
         print(f"Error fetching stock data: {e}")
 

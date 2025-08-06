@@ -24,7 +24,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - FINNHUB_API_KEY=your-api-key # ! replace with your actual API key
+      - FINNHUB_API_KEY=d28aub9r01qjsuf2a1d0d28aub9r01qjsuf2a1dg # ! replace with your actual API key
       - STOCK_SYMBOL=AAPL
 
 volumes:
