@@ -128,7 +128,7 @@ stock_exporter:
    - Prometheus on port 9090
    - Grafana on port 3000
 
-   > - To stop and remove all containers and networks created by Compose, use this clean up command. Add `-v` at the end to delete volumes as well, otherwise, the Grafana volume will persist. `docker-compose down`
+   > - To stop and remove all containers and networks created by Compose, use this clean up command `docker-compose down`. Add `-v` at the end to delete volumes as well, otherwise, the Grafana volume will persist. 
 
 4. **Access the Dashboards**
 
