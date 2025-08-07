@@ -2,7 +2,7 @@
 
 This project is a real-time stock dashboard using **Grafana**, **Prometheus**, and the **Finnhub API**. It fetches live APPL stock price and visualizes them in a modern dashboard.
 
-![Dashboard Screenshot](assets/dashboard_mock_data.png)
+![Dashboard Screenshot](assets/dashboard.png)
 
 ---
 
