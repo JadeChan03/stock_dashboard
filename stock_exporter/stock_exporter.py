@@ -2,6 +2,9 @@ from prometheus_client import start_http_server, Gauge
 import requests
 import time
 import os
+import random
+
+DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() == "true"
 
 # Finnhub API setup
 API_KEY = os.getenv("FINNHUB_API_KEY", "YOUR_API_KEY")
@@ -15,10 +18,30 @@ low_price = Gauge('stock_low_price', 'Low price of the day')
 previous_close = Gauge ('stock_previous_close', 'Previous close price')
 dividend_yield = Gauge('stock_dividend_yield', 'Dividend yield')
 
+def fetch_mock_stock_data():
+    # mock data generation for demo mode
+    base_price = 190.0
+    current = base_price + random.uniform(-20, 20)
+    high = current + random.uniform(0, 10)
+    low = current - random.uniform(0, 10)
+    prev_close = base_price + random.uniform(-15, 15)
+    
+    return {
+        'c': round(current, 2),    # current price
+        'h': round(high, 2),       # high price
+        'l': round(low, 2),        # low price
+        'pc': round(prev_close, 2), # previous close
+        'd': round(random.uniform(0, 1), 2)  # dividend yield
+    }
+
 def fetch_stock_data():
     try:
-        response = requests.get(FINNHUB_URL)
-        data = response.json()
+        if DEMO_MODE:
+            data = fetch_mock_stock_data()
+        else:
+            response = requests.get(FINNHUB_URL)
+            data = response.json()
+        
         current_price.set(data.get('c', 0))
         high_price.set(data.get('h', 0))
         low_price.set(data.get('l', 0))

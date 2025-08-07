@@ -72,6 +72,9 @@ All services are orchestrated using Docker Compose:
 
 ---
 
+## Demo Mode vs Live Data Mode
+By default, the application is set this "Demo Mode." Mock data will be fetched rather than from the Finnhub API. To turn this mode off, set `DEMO_MODE=false` under `environment` in `docker-compose.yml`.
+
 ## Pre-setup I: Getting a Finnhub API Key
 
 1. Go to [Finnhub.io](https://finnhub.io).
@@ -146,6 +149,7 @@ stock_exporter:
 ## Setup Instructions II: Adding Grafana Dashboards
 
 1. **Log in to Grafana on [http://localhost:3000](http://localhost:3000) (default user: `admin`, password: `admin`)**
+   - Note: May take up to a minute to start.
 2. **Add Prometheus as a data source**
    - Click **Add Your First Data Source** from the main dashboard
      - Alternatively: click **Connections** on the left of the dashboard then **Add New Connections**

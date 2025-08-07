@@ -23,7 +23,10 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -36,15 +39,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -70,9 +73,7 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -84,7 +85,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_current_price",
@@ -98,7 +99,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -143,15 +147,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -188,7 +192,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_current_price",
@@ -202,7 +206,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -248,15 +255,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -293,7 +300,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_low_price",
@@ -305,7 +312,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_current_price",
@@ -318,7 +325,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_high_price",
@@ -334,7 +341,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -347,15 +357,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -381,9 +391,7 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -395,7 +403,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_low_price",
@@ -411,7 +419,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "f7356124-8e2d-4607-bdc8-ae37ddffb394"
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
       },
       "fieldConfig": {
         "defaults": {
@@ -425,15 +433,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -459,9 +467,7 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -473,7 +479,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_high_price",
@@ -487,7 +493,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -500,15 +509,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -534,9 +543,7 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -548,7 +555,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_previous_close",
@@ -562,7 +569,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -575,15 +585,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 0.75
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 0.85
               },
               {
@@ -608,9 +618,7 @@
         "minVizWidth": 75,
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -622,7 +630,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_dividend_yield",
@@ -632,11 +640,14 @@
           "refId": "A"
         }
       ],
-      "title": "Divident Yield",
+      "title": "Dividend Yield",
       "type": "gauge"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -658,15 +669,15 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 170
               },
               {
-                "color": "#EAB839",
+                "color": "yellow",
                 "value": 190
               },
               {
@@ -692,9 +703,7 @@
           "countRows": false,
           "enablePagination": true,
           "fields": [],
-          "reducer": [
-            "sum"
-          ],
+          "reducer": ["sum"],
           "show": false
         },
         "showHeader": true,
@@ -710,7 +719,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_current_price",
@@ -723,7 +732,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_high_price",
@@ -736,7 +745,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_low_price",
@@ -748,7 +757,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_dividend_yield",
@@ -761,7 +770,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ec539d35-47eb-4a0b-9fd5-9fcab991e239"
+            "uid": "b12f6622-7cca-4383-a1f6-934241b4de34"
           },
           "editorMode": "code",
           "expr": "stock_previous_close",
@@ -810,13 +819,13 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "APPL Stock Metrics",
+  "title": "AAPL Stock Metrics",
   "uid": "d32cd53e-85a1-4fed-a0bc-ab7818225a3b",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
