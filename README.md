@@ -72,7 +72,8 @@ All services are orchestrated using Docker Compose:
 
 ---
 
-## Demo Mode vs Live Data Mode
+## Demo Mode
+
 By default, the application is set this "Demo Mode." Mock data will be fetched rather than from the Finnhub API. To turn this mode off, set `DEMO_MODE=false` under `environment` in `docker-compose.yml`.
 
 ## Pre-setup I: Getting a Finnhub API Key
@@ -133,7 +134,7 @@ stock_exporter:
    - Prometheus on port 9090
    - Grafana on port 3000
 
-   > - To stop and remove all containers and networks created by Compose, use this clean up command `docker-compose down`. Add `-v` at the end to delete volumes as well, otherwise, the Grafana volume will persist. 
+   > - To stop and remove all containers and networks created by Compose, use this clean up command `docker-compose down`. Add `-v` at the end to delete volumes as well, otherwise, the Grafana volume will persist.
 
 4. **Access the Dashboards**
 
@@ -156,8 +157,9 @@ stock_exporter:
    - Add Prometheus as a data source by inputting (`http://prometheus:9090`)
    - Click **Save & Test**
 3. **Import the Prebuilt Dashboard:**
+
    - After you **Save & Test** your data source, click **building a dashboard** from the pop-up message
-      - Alternatively: click **Dashboards** then **Create New Dashboard**
+     - Alternatively: click **Dashboards** then **Create New Dashboard**
 
    ![Save & Test](assets/save_and_test.png)
 
@@ -165,6 +167,7 @@ stock_exporter:
    - Upload the provided JSON file (`grafana/stock_dashboard.json`) from this repository, or paste its contents into the import box.
    - When prompted, select your Prometheus data source.
    - Click **Import** to finish.
+
 4. **Re-establish Panel Connections:**
 
    - Open your dashboard in Grafana
@@ -179,7 +182,7 @@ stock_exporter:
 
    ![No Data](assets/no_data.png)
 
-   - Click **Run query**, then **Apply** on the ***top right*** of the dashboard.
+   - Click **Run query**, then **Apply** on the **_top right_** of the dashboard.
 
    ![Click Apply](assets/click_apply.png)
 
@@ -188,19 +191,41 @@ stock_exporter:
 
 ---
 
+## Setup Instructions III: Setting Up Alerts
+
+Alerts are set up with a **Webhook** test URL as the Contact Point. It also works with Demo Mode as the thresholds are realistic and based on the mock data range ($170-$210). The random mock data can trigger the Alert Conditions, effectively sending a notification to Webhook.
+
+1. Go to Alerting → Alert Rules → New rule
+2. Query: `stock_current_price < 175` and `stock_current_price > 205`
+
+![Alert Conditions](assets/alert_conditions.png)
+
+3. Go to https://webhook.site/ to get a test URL
+4. Contact Point: Webhook (https://webhook.site/your-url)
+
+![Contact Point](assets/contact_point.png)
+
+4. Notification Policy: **Edit the Default Policy**, select your Webhook url, and **Save Contact Point**
+
+![Notification Policy](assets/notification_policy.png)
+
+5. View the Alert on your Webhook site
+
+![Webhook](assets/webhook.png)
+
 ## Troubleshooting
 
 - If you see errors about missing API keys
-   - **Solution:** Ensure you have set `FINNHUB_API_KEY` in your environment or in `docker-compose.yml`.
-   - Check logs with `docker-compose logs stock_exporter` for more details.
-   - Use the clean up command before rebuilding the container after you update your API key environment variable
+  - **Solution:** Ensure you have set `FINNHUB_API_KEY` in your environment or in `docker-compose.yml`.
+  - Check logs with `docker-compose logs stock_exporter` for more details.
+  - Use the clean up command before rebuilding the container after you update your API key environment variable
 
-```bash 
+```bash
 docker-compose down
 ```
 
-- If you see an error like:** `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`  
-   - **Solution:** Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
+- If you see an error like:\*\* `Cannot connect to the Docker daemon at unix:///... Is the docker daemon running?`
+  - **Solution:** Make sure Docker Desktop is running on your computer. Open Docker Desktop from your Applications folder, wait for it to start, then try running `docker-compose up --`
 
 ---
 
@@ -233,7 +258,6 @@ docker-compose down
 
 ## Future Enhancements
 
-- **Grafana Alerts**: Add alert rules to notify when a stock price crosses a defined threshold (e.g., drops below a target value).
 - **Contact Points**: Integrate notification channels such as:
   - **Slack**: Send real-time alerts to a Slack channel.
   - **Email**: Notify stakeholders via email when alerts are triggered.
