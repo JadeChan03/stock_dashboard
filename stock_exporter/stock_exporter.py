@@ -54,4 +54,4 @@ if __name__ == '__main__':
     start_http_server(8000)
     while True:
         fetch_stock_data()
-        time.sleep(15)
+        time.sleep(5) #fetch data every 5 secs
