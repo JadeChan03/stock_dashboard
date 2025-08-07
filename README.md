@@ -14,6 +14,7 @@ This project is a real-time stock dashboard using **Grafana**, **Prometheus**, a
 - [Pre-setup II: Setting Up Environment Variables](#pre-setup-ii-setting-up-environment-variables)
 - [Setup Instructions I: Start the Application](#setup-instructions-i-start-the-application) \*
 - [Setup Instruction II: Adding Grafana Dashboards](#setup-instructions-ii-adding-grafana-dashboards) \*
+- [Setup Instructions III: Setting Up Alerts](#setup-instructions-iii-setting-up-alerts)
 - [Trouble Shooting](#troubleshooting)
 - [File Structure](#file-structure)
 - [Security Note](#security-note)
